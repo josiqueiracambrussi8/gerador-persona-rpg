@@ -122,6 +122,64 @@ public class PersonagemView extends JFrame {
         add(painelDireito);
     }
 
+    public String getNome(){
+        return nome.getName();
+    }
+    public String getClasse(){
+        return classe.getSelectedItem().toString();
+    }
     
-    
+    public String getDificuldade(){
+        if(rbFacil.isSelected()){
+            return "Fácil";
+        }else if(rbMedio.isSelected()){
+            return "Médio";
+        }else if(rbDificil.isSelected()){
+            return "Difícil";
+        }else {
+            return "Não infromado";
+        }
+    }
+
+    public ArrayList<String> getHabilidades(){
+        ArrayList<String> listaHabilid = new ArrayList<>();
+        if(ckbMagia.isSelected()){
+            listaHabilid.add("Magia");
+        }if(ckbCura.isSelected()){
+            listaHabilid.add("Cura");
+        }if(ckbFutividade.isSelected()){
+            listaHabilid.add("Futividade");
+        }if(ckbForca.isSelected()){
+            listaHabilid.add("Força");
+        }
+        return listaHabilid;
+    }
+
+    public int getNivel(){
+        return nivelInicial.getValue();
+    }
+
+    public JButton getBtnCriar(){
+        return btnCriar;
+    }
+    public JButton getBtnApagar(){
+        return btnApagar;
+    }
+
+    public void attResumo(String texto){
+        resumo.setText(texto);
+    }
+
+    public void limparAreas(){
+        nome.setText("");
+        classe.setSelectedItem("");
+        selecaoDif.clearSelection();
+        ckbMagia.setSelected(false);
+        ckbCura.setSelected(false);
+        ckbFutividade.setSelected(false);
+        ckbForca.setSelected(false);
+        nivelInicial.setValue(1);
+        resumo.setText("");
+
+    }
 }
