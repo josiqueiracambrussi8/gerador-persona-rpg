@@ -3,12 +3,14 @@ package model;
 import java.util.ArrayList;
 
 public class PersonagemModel {
+    //atributos do personagem
     private String nome;
     private String classe;
     private String dificuldade;
     private ArrayList<String> habilidade;
     private int nivelInicial;
     
+    //contrsutor
     public PersonagemModel(String nome, String classe, String dificuldade, ArrayList<String> habilidade, int nivelInicial) {
         this.nome = nome;
         this.classe = classe;
@@ -17,6 +19,7 @@ public class PersonagemModel {
         this.nivelInicial = nivelInicial;
     }
 
+    //getters
     public String getNome() {
         return nome;
     }
